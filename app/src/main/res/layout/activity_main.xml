@@ -1,40 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height = "match_parent" tools:context = ".MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#ff6500"
-        android:text="Begin"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome" />
+    <!-- This is the main activity page that displays information for fullscreen styles -->
 
+    <!-- Welcome text -->
     <TextView
-        android:id="@+id/welcome"
         android:layout_width="wrap_content"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Welcome to Force Plate Cloud Prototype!"
-        app:layout_constraintBottom_toTopOf="@id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        android:layout_height="wrap_content"
+        android:text="@string/Welcome"
+        android:id="@+id/welcome"
+        android:textSize="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Intro to the user -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/intro"
+        android:text="@string/intro"
+        android:layout_below="@id/welcome"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="35sp"/>
+
+    <!-- Image icon -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/icon"
+        android:src="@drawable/icon2"
+        android:layout_below="@+id/intro"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Username field -->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/usernm"
+        android:hint="Enter Username"
+        android:focusable="true"
+        android:textColorHighlight="#ff7eff15"
+        android:textColorHint="@color/colorPrimary2"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/icon"
+        android:layout_alignParentLeft = "true"
+        android:layout_alignParentStart = "true"
+        android:layout_alignParentRight = "true"
+        android:layout_alignParentEnd = "true"/>
+
+    <!-- Password field -->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwrd"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@id/usernm"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@id/usernm"
+        android:layout_alignEnd="@id/usernm"
+        android:textColorHint="@color/colorPrimary2"
+        android:hint="Enter Password"/>
+
+    <!-- Login button -->
+    <Button
+        android:id="@+id/loginBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="-30dp"
+        android:layout_marginBottom="211dp"
+        android:layout_toStartOf="@id/intro"
+        android:text="@string/login" />
+
+    <!-- Maybe Add Cancel button -->
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
+
+
